@@ -1,2 +1,4 @@
-# Academy
-Resources for Scavetta Academy
+# Scavetta Academy
+
+## Resources
+
