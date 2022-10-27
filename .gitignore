@@ -1,3 +1,7 @@
+.DS_Store
+*_private/
+/private/
+
 # History files
 .Rhistory
 .Rapp.history

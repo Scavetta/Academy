@@ -1,0 +1,38 @@
+---
+title: "Easy Interface"
+author: "Rick Scavetta"
+date: "`r Sys.Date()`"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Report
+
+```{r echo = FALSE}
+inputPanel(
+  
+  fileInput("proteinUI",
+            label = "Data file:",
+            multiple = F),
+  
+  verbatimTextOutput("protein_file"),
+  
+  fileInput("legendUI",
+            label = "Legend file:",
+            multiple = F),
+  
+  verbatimTextOutput("legend_file", placeholder = TRUE)
+  
+)
+
+# Watch to see if the value of proteinUI or legendUI has been updated:
+output$protein_file <- renderText({input$proteinUI[[1]]})
+output$legend_file <- renderText({input$legendUI[[1]]})
+
+
+
+```
